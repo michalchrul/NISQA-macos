@@ -45,28 +45,35 @@ conda activate nisqa
 ```
 ### macOS
 
-To install requirements you can use [Anaconda](https://www.anaconda.com/products/individual) however it is recommended to use [miniconda](https://docs.conda.io/en/latest/miniconda.html):
+#### • Installing miniconda
+To install requirements you can use [Anaconda](https://www.anaconda.com/products/individual) however it is recommended to use [miniconda](https://docs.conda.io/en/latest/miniconda.html). The second command is going to setup your shell (zsh in this case).
 
 ```miniconda
 brew install --cask miniconda
-```
-Run this command to setup your shell (zsh in this case)
 
-```miniconda
 conda init zsh
 ```
-
+#### • Creating the environment
 Create a conda environment using the .yml file for macOS.
 ```setup
 conda env create -f env-macos.yml
 ```
-
+Note that if your conda is M1 native and you want to install an intel environment, you need to run the command with the following prefix:
+```setup
+CONDA_SUBDIR=osx-64 conda env create -f env-macos.yml
+```
+#### • Activating the environment
 This will create a new environment with the name "nisqa". Activate this environment to go on:
-
 ```setup2
 conda activate nisqa
 ```
 
+#### • Deactivate and remove the environment
+```uninstall
+conda deactivate
+
+conda remove --name nisqa --all
+```
 
 ## Using NISQA
 
