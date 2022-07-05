@@ -30,6 +30,8 @@ More information about the deep learning model structure, the used training data
 
 ## Installation
 
+### Windows
+
 To install requirements install [Anaconda](https://www.anaconda.com/products/individual) and then use:
 
 ```setup
@@ -41,7 +43,29 @@ This will create a new environment with the name "nisqa". Activate this environm
 ```setup2
 conda activate nisqa
 ```
+### macOS
 
+To install requirements you can use [Anaconda](https://www.anaconda.com/products/individual) however it is recommended to use [miniconda](https://docs.conda.io/en/latest/miniconda.html):
+
+```miniconda
+brew install --cask miniconda
+```
+Run this command to setup your shell (zsh in this case)
+
+```miniconda
+conda init zsh
+```
+
+Create a conda environment using the .yml file for macOS.
+```setup
+conda env create -f env-macos.yml
+```
+
+This will create a new environment with the name "nisqa". Activate this environment to go on:
+
+```setup2
+conda activate nisqa
+```
 
 
 ## Using NISQA
