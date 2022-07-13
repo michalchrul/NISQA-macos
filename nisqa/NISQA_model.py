@@ -17,6 +17,12 @@ import torch.nn as nn
 from torch import optim
 from torch.utils.data import DataLoader
 from . import NISQA_lib as NL
+
+import ntpath
+
+def path_leaf(path):
+    head, tail = ntpath.split(path)
+    return tail or ntpath.basename(head)
         
 class nisqaModel(object):
     '''
@@ -76,8 +82,19 @@ class nisqaModel(object):
             self.ds_val.df.to_csv(
                 os.path.join(self.args['output_dir'], 'NISQA_results.csv'), 
                 index=False)
-            
+
         print(self.ds_val.df.to_string(index=False))
+        if(self.args['data_dir']):
+            print("\nAverage MOS for dataset \"" + path_leaf(self.args['data_dir']) + "\":")
+            print(self.ds_val.df["mos_pred"].mean())
+            print("\nMOS Variance for dataset \"" + path_leaf(self.args['data_dir']) + "\":")
+            print(self.ds_val.df["mos_pred"].var())
+            print("\n")
+        if (self.args['deg']):
+            print("\nMOS for file \"" + path_leaf(self.args['deg']) + "\":")
+            print(self.ds_val.df["mos_pred"].to_string(index=False))
+            print("\n")
+
         return self.ds_val.df
 
     def _train_mos(self):
