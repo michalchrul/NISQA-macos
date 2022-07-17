@@ -38,11 +38,7 @@ To install requirements install [Anaconda](https://www.anaconda.com/products/ind
 conda env create -f env.yml
 ```
 
-This will create a new environment with the name "nisqa". Activate this environment to go on:
-
-```setup2
-conda activate nisqa
-```
+This will create a new environment with the name "nisqa".
 ### macOS
 
 #### • Installing miniconda
@@ -62,11 +58,92 @@ Note that if your conda is M1 native and you want to install an intel environmen
 ```setup
 CONDA_SUBDIR=osx-64 conda env create -f env-macos.yml
 ```
+
+### Linux
+
+#### Installing Anaconda or Miniconda
+Download Anaconda (~650MB): https://www.anaconda.com/products/distribution
+Download latest miniconda installer (75MB): https://docs.conda.io/en/latest/miniconda.html#linux-installers
+
+Check the hash if required for safety measures.
+
+Install Anaconda with:
+```shell
+bash <path_to_anaconda_script> # e.g. bash ~/Downloads/Anaconda3-2022.05-Linux-x86_64.sh
+```
+Install Miniconda with:
+```shell
+bash <path_to_moniconda_script> # e.g. bash ~/Downloads/Miniconda3-latest-Linux-x86_64.sh
+```
+
+Skim through the licence conditions with "Page down" or "d" key, answer "yes" at the end, hit "enter" to install Anaconda/Miniconda to default home location `/home/<user>/anaconda3`/`/home/<user>/miniconda3` or specify places similarly in `/opt/` or `/usr/local/` if you want to make the program available to all users.
+
+If you choose the installer to initialize Anaconda3, it will add this to your `~/.bashrc` script.
+
+```shell
+# >>> conda initialize >>># !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('<installation_folder>/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "<installation_folder>/etc/profile.d/conda.sh" ]; then
+        . "<installation_folder>/etc/profile.d/conda.sh"
+    else
+        export PATH="<installation_folder>/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+```
+
+If you do not choose the installer to initialze Anaconda3, you can activate conda's base environment in your current shell session with:
+```shell
+eval "$(<installation_folder>/bin/conda shell.YOUR_SHELL_NAME hook)"
+```
+
+For changes to take effect, close and re-open your current shell.
+
+Ref:
+- https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html
+- https://linuxhandbook.com/anaconda-linux/
+
+
+#### Uninstalling Anaconda or Miniconda
+
+Remove the instalation files and related anaconda lines from `~/.bashrc` script
+```shell
+rm -rf <installation_location> # e.g. rm -rf ~/anaconda3
+```
+
+Remove the hidden file and folders `.condarc`, `.conda`, `.continuum` that may have been created in the home directory by running:
+```shell
+rm -rf ~/.condarc ~/.conda ~/.continuum
+```
+
+
+#### Create conda environment
+
+```shell
+conda env create -f env.yml
+```
+This will create a new environment with the name "nisqa".
+
+```shell
+du -sh ~/miniconda3/envs/*
+4,0G	/home/filipfranek/miniconda3/envs/nisqa
+```
+### • Conda environment
+
+Common for all platforms.
+
 #### • Activating the environment
-This will create a new environment with the name "nisqa". Activate this environment to go on:
+
+Activate the conda environment to go on:
+
 ```setup2
 conda activate nisqa
 ```
+
 
 #### • Deactivate and remove the environment
 ```uninstall
