@@ -263,7 +263,7 @@ For the download link and more details on the datasets and used source speech sa
 - If you use the **NISQA model** or the **NISQA Corpus** for your research, please cite following paper:  
   [G. Mittag, B. Naderi, A. Chehadi, and S. Möller “NISQA: A Deep CNN-Self-Attention Model for Multidimensional Speech Quality Prediction with Crowdsourced Datasets,” in Proc. Interspeech 2021, 2021.](https://www.isca-speech.org/archive/pdfs/interspeech_2021/mittag21_interspeech.pdf)
 - Please cite following paper if you use the **NISQA-TTS** model for Naturalness prediction of synthesized speech:  
-  [G. Mittag and S. Moller, “Deep Learning Based Assessment of Synthetic Speech Naturalness,” in Proc. Interspeech 2020, 2020.](https://www.isca-speech.org/archive/Interspeech_2020/abstracts/2382.html)
+  [G. Mittag and S. Moller, “Deep Learning Based Assessment of Synthetic Speech Naturalness,” in Proc. Interspeech 2020, 2020.](https://arxiv.org/pdf/2104.11673.pdf)
 - Please cite following paper if you use the **double-ended NISQA model**:  
   [G. Mittag and S. Möller. Full-reference speech quality estimation with attentional Siamese neural networks. In Proc. ICASSP 2020, 2020.](https://ieeexplore.ieee.org/document/9053951)
 - The older NISQA (v0.42) model version is described in following paper:  
