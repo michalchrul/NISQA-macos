@@ -74,6 +74,26 @@ conda deactivate
 
 conda remove --name nisqa --all
 ```
+### Linux
+
+Install [Anaconda](https://www.anaconda.com/products/individual) / [miniconda](https://docs.conda.io/en/latest/miniconda.html).
+
+Note: If you do not choose the installer to initialze Anaconda3, you can activate conda's base environment in your current shell session with:
+```shell
+eval "$(<installation_folder>/bin/conda shell.YOUR_SHELL_NAME hook)"
+```
+
+#### Create conda environment
+
+```setup
+conda env create -f env.yml
+```
+
+This will create a new environment with the name "nisqa". Activate this environment to go on:
+
+```setup2
+conda activate nisqa
+```
 
 ## Using NISQA
 
