@@ -54,16 +54,16 @@ brew install --cask miniconda
 conda init zsh
 ```
 #### • Creating the environment
-Create a conda environment using the .yml file for macOS.
+Create an arm64 conda environment using the .yml file for macOS.
 ```setup
 conda env create -f env-macos.yml
 ```
-Note that if your conda is M1 native and you want to install an intel environment, you need to run the command with the following prefix:
+Note that if your conda is M1 native and you want to install an intel environment, you need to run the command with the following prefix and use the x86 env file:
 ```setup
-CONDA_SUBDIR=osx-64 conda env create -f env-macos.yml
+CONDA_SUBDIR=osx-64 conda env create -f env-macos-x86.yml
 ```
 #### • Activating the environment
-This will create a new environment with the name "nisqa". Activate this environment to go on:
+This will create a new environment with the name "nisqa" (or "nisqa-x86" if you opted for an x86 version). Activate this environment to go on:
 ```setup2
 conda activate nisqa
 ```
