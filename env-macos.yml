@@ -4,7 +4,6 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - mkl < 2022
   - libsndfile=1.0.31
   - pillow=8.4.0
   - pip=21.3.1
